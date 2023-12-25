@@ -2,7 +2,7 @@ import { FastifyInstance, FastifyReply, FastifyRequest, RouteShorthandOptions } 
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 
-const PISTON_API = "http://piston:2000/api/v2/execute";
+const PISTON_API = "http://127.0.0.1:2000/api/v2/execute";
 
 const fastify_request_schema = {
     body: {
