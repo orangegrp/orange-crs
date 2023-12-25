@@ -68,20 +68,20 @@ function post(req: FastifyRequest, reply: FastifyReply) {
                 args: request_info.args
             })
         }).then(async resp => {
-            console.log('=== .THEN ===');
+            console.log('=== .THEN ===', exec_id);
             console.dir(resp);
             reply.status(200).send({ id: exec_id, data: await resp.json() } as reply_schema);
             return;
         }).catch((err) => {
-            console.log('=== .CATCH ===');
+            console.log('=== .CATCH === ', exec_id);
             console.dir(err);
-            reply.status(500).send({ id: exec_id, data: err});
+            reply.status(500).send({ id: exec_id });
             return;
         });
     } catch (err) {
-        console.log('=== OUTER EXCEPTION ===');
+        console.log('=== OUTER EXCEPTION ===', exec_id);
         console.dir(err);
-        reply.status(500).send({ id: exec_id, data: err});
+        reply.status(500).send({ id: exec_id });
         return;
     }
 }
