@@ -53,9 +53,10 @@ function post(req: FastifyRequest, reply: FastifyReply) {
         return;
     }
 
+    const exec_id = random_id();
+
     try {
         const request_info: request_schema = JSON.parse(req.body as string);
-        const exec_id = random_id();
 
         fetch(PISTON_API, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -67,14 +68,17 @@ function post(req: FastifyRequest, reply: FastifyReply) {
                 args: request_info.args
             })
         }).then(resp => {
+            console.dir(resp);
             reply.status(200).send({ id: exec_id, data: resp.json() } as reply_schema);
             return;
         }).catch((err) => {
-            reply.status(500).send(err);
+            console.dir(err);
+            reply.status(500).send({ id: exec_id, data: err});
             return;
         });
     } catch (err) {
-        reply.status(500).send(err);
+        console.dir(err);
+        reply.status(500).send({ id: exec_id, data: err});
         return;
     }
 }
