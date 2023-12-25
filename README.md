@@ -1,6 +1,11 @@
 # orange🟠 CRS
 orange🟠 Code Runner Server
 
+## Live instances 
+| Server | Status |
+| ------ | ------ |
+| `crs-1.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Not_in_service-orange) |
+
 ## `execute` API v1
 > ⚠️ This API is considered to be legacy and will be replaced with a new version in the future with more features and better operability.
 - Endpoint: `/api/v1/execute`
