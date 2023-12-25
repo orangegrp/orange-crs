@@ -1,10 +1,12 @@
 # orange🟠 CRS
 orange🟠 Code Runner Server
 
-## Live instances 
+## Instances 
+> Note: The status is not live and may be inaccurate from time to time. It is not a technical uptime monitor, rather, it reflects our understanding of the CRS instances.
+
 | Server | Status |
 | ------ | ------ |
-| `crs-1.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Not_in_service-orange) |
+| `crs-1.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Operational-limegreen) |
 
 ## `execute` API v1
 > ⚠️ This API is considered to be legacy and will be replaced with a new version in the future with more features and better operability.
