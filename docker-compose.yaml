@@ -5,7 +5,6 @@ services:
     container_name: orange-crs
     image: a4004/orange-crs
     restart: unless-stopped
-    ports:
-      - "3000:3000"
+    network_mode: "host"
     env_file:
       - .env
