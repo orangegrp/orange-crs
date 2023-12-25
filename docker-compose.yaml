@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  orange-crs:
+    container_name: orange-crs
+    image: a4004/orange-crs
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    env_file:
+      - .env
