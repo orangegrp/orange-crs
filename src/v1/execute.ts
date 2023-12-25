@@ -67,10 +67,10 @@ function post(req: FastifyRequest, reply: FastifyReply) {
                 stdin: request_info.stdin,
                 args: request_info.args
             })
-        }).then(resp => {
+        }).then(async resp => {
             console.log('=== .THEN ===');
             console.dir(resp);
-            reply.status(200).send({ id: exec_id, data: resp.json() } as reply_schema);
+            reply.status(200).send({ id: exec_id, data: await resp.json() } as reply_schema);
             return;
         }).catch((err) => {
             console.log('=== .CATCH ===');
