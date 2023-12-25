@@ -19,8 +19,8 @@ const fastify_request_schema = {
 type request_schema = {
     code: string,
     lang: string,
-    stdin: string,
-    args: string[]
+    stdin?: string,
+    args?: string[]
 }
 
 type reply_schema = {
