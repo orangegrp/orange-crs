@@ -16,4 +16,4 @@ if (process.env.NODE_ENV === "production") {
 
 v1(fastify, "/api/v1/execute");
 
-fastify.listen( { port: Number(process.env.PORT) || 3000 });
+fastify.listen( { port: Number(process.env.PORT) || 3000, host: "0.0.0.0" } );
