@@ -1,0 +1,15 @@
+{
+  "name": "orange-crs",
+  "version": "1.0.0",
+  "description": "orange🟠 Code Runner Server",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc && node dist/index.js"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
