@@ -56,7 +56,7 @@ function post(req: FastifyRequest, reply: FastifyReply) {
     const exec_id = random_id();
 
     try {
-        const request_info: request_schema = JSON.parse(req.body as string);
+        const request_info: request_schema = req.body as request_schema;
 
         fetch(PISTON_API, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
