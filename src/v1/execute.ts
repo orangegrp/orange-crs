@@ -29,7 +29,7 @@ type reply_schema = {
 }
 
 function random_id() {
-    return crypto.randomBytes(4).toString("hex");
+    return crypto.randomBytes(3).toString("hex");
 }
 
 function post(req: FastifyRequest, reply: FastifyReply) {
@@ -68,15 +68,18 @@ function post(req: FastifyRequest, reply: FastifyReply) {
                 args: request_info.args
             })
         }).then(resp => {
+            console.log('=== .THEN ===');
             console.dir(resp);
             reply.status(200).send({ id: exec_id, data: resp.json() } as reply_schema);
             return;
         }).catch((err) => {
+            console.log('=== .CATCH ===');
             console.dir(err);
             reply.status(500).send({ id: exec_id, data: err});
             return;
         });
     } catch (err) {
+        console.log('=== OUTER EXCEPTION ===');
         console.dir(err);
         reply.status(500).send({ id: exec_id, data: err});
         return;
