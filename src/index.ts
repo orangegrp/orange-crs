@@ -7,12 +7,10 @@ const fastify = Fastify( {
     trustProxy: true
 });
 
-if (process.env.NODE_ENV === "production") {
-    fastify.setErrorHandler((error, _request, reply) => {
-        console.error(error);
-        reply.status(500).send();
-    });
-}
+fastify.setErrorHandler((error, _request, reply) => {
+    console.dir(error);
+    reply.status(500).send();
+});
 
 v1(fastify, "/api/v1/execute");
 
