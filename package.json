@@ -3,13 +3,24 @@
   "version": "1.0.0",
   "description": "orange🟠 Code Runner Server",
   "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc && node dist/index.js"
+    "dev": "tsc && node dist/index.js",
+    "prod": "NODE_ENV=production tsc && node dist/index.js",
+    "gen-secret": "node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\"",
+    "gen-token": "node -e \"console.log(require('jsonwebtoken').sign({id: process.argv[2]}, process.argv[1], {expiresIn:'1y'}))\"",
+    "verify-token": "node -e \"console.log(require('jsonwebtoken').verify(process.argv[1], process.argv[2]))\""
   },
   "author": "",
   "license": "BSD-3-Clause",
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fastify": "^4.25.2",
+    "jsonwebtoken": "^9.0.2"
   }
 }
