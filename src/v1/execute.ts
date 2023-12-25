@@ -68,11 +68,13 @@ function post(req: FastifyRequest, reply: FastifyReply) {
             })
         }).then(resp => {
             reply.status(200).send({ id: exec_id, data: resp.json() } as reply_schema);
-        }).catch(() => {
-            reply.status(500).send();
+            return;
+        }).catch((err) => {
+            reply.status(500).send(err);
+            return;
         });
-    } catch {
-        reply.status(500).send();
+    } catch (err) {
+        reply.status(500).send(err);
         return;
     }
 }
