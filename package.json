@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-all": "cd local_modules/orange-common-lib && tsc && cd ../.. && tsc",
     "dev": "tsc && node dist/index.js",
     "prod": "tsc && NODE_ENV=production node dist/index.js",
     "prod-win": "tsc && set NODE_ENV=production && node dist/index.js",
