@@ -4,6 +4,6 @@ COPY . .
 RUN npm ci
 WORKDIR /opt/local_modules/orange-common-lib
 RUN npm ci
-RUN tsc
+RUN npx tsc
 WORKDIR /opt
 CMD npm run prod
