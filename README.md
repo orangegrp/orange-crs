@@ -6,7 +6,7 @@ orange🟠 Code Runner Server
 
 | Server | Status |
 | ------ | ------ |
-| `crs-1.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Operational-limegreen) |
+| `crs-1.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Down-red) |
 
 ## `execute` API v1
 > ⚠️ This API is considered to be legacy and will be replaced with a new version in the future with more features and better operability.
