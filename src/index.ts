@@ -7,10 +7,14 @@ const fastify = Fastify( {
     trustProxy: true
 });
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV && process.env.NODE_ENV.trim() == "production") {
+    console.log('Production mode, setting error handler to emit 500 and not found to 404 (no details).');
     fastify.setErrorHandler((error, _request, reply) => {
         console.dir(error);
         reply.status(500).send();
+    });
+    fastify.setNotFoundHandler((_request, reply) => {
+        reply.status(404).send();
     });
 }
 
