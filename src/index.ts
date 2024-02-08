@@ -2,6 +2,7 @@ import "dotenv/config";
 import { getLogger } from "orange-common-lib";
 import Fastify from "fastify";
 import v1 from "./v1/execute.js";
+import v2 from "./v2/execute.js";
 
 const logger = getLogger("orange🟠 Code Runner Service");
 logger.info("Hello World! orange🟠 Code Runner Service is starting!");
@@ -31,6 +32,7 @@ if (process.env.NODE_ENV && process.env.NODE_ENV.trim() == "production") {
 
 logger.info("Registering Fastify routes ...");
 v1(fastify, "/api/v1/execute", logger.sublogger("API v1"));
+v2(fastify, "/api/v2/execute", logger.sublogger("API v2"));
 logger.ok("Fastify routes registered.");
 
 const port = Number(process.env.PORT) || 3000;
