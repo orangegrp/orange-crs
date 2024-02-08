@@ -29,7 +29,7 @@ function get(req: FastifyRequest, reply: FastifyReply) {
     try {
         fetch(PISTON_API, { headers: { 'Accept': 'application/json' }}).then(async resp => {
             logger.ok(`get(req, reply) has successfully completed.`);
-            reply.status(200).send(resp.json());
+            reply.status(200).send(await resp.json());
             return;
         }).catch((err) => {
             logger.error(err);
