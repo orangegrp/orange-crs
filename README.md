@@ -14,27 +14,41 @@ orange🟠 Code Runner Server
 | ------ | ------ |
 | `crs-1.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Operational-limegreen) |
 
+## `execute` API v2 🆕
+- Endpoint: `/api/v2/execute`
+- Method: `POST`
+- Required headers: `Content-Type`, `Authorization`
+
+## `info` API v2 🆕
+- Endpoint: `/api/v2/info`
+- Method: `GET`
+- Required headers: `Content-Type`, `Authorization`
+
 ## `execute` API v1
 - Endpoint: `/api/v1/execute`
 - Method: `POST`
 - Required headers: `Content-Type`, `Authorization`
 
-## Request headers
+
+## Request headers for all API requests (v1 and v2)
 - `Content-Type` must be `application/json`
 - Authorisation header must contain a valid token (generable using script `npm run gen-token <secret> <identifier>`)
-
 ## Request body
-### Request schema
+> API V2 is a small update at the moment. Most Features of API v1 work in v2 plus the v2 additions. See comment for each schema for additional info.
+
+### Request schema for `execute`
 ```typescript
 /* JSON format */
 type request_schema = {
     code: string,
     lang: string,
+    version: string, // API V2 only
+    runtime: string, // API V2 only
     stdin?: string,
     args?: string[]
 }
 ```
-### Reply schema
+### Reply schema for `execute`
 ```typescript
 /* JSON format */
 type reply_schema = {
@@ -59,4 +73,24 @@ Content-Type: application/json
   "language": "javascript",
   "version": "15.10.0"
 }
+```
+
+### Reply schema for `info` (v2 only)
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "language": "bash",
+    "version": "5.1.0",
+    "aliases": ["sh"]
+  },
+  {
+    "language": "javascript",
+    "version": "15.10.0",
+    "aliases": ["node-javascript", "node-js", "javascript", "js"],
+    "runtime": "node"
+  }
+]
 ```
