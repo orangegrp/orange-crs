@@ -12,7 +12,8 @@ orange🟠 Code Runner Server
 
 | Server | Status |
 | ------ | ------ |
-| `crs-1.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Operational-limegreen) |
+| `crs-1.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Operational-limegreen) ![Static Badge](https://img.shields.io/badge/Sunsetting-navy)  |
+| `crs-2.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Offline-red)  |
 
 ## `execute` API v2 🆕
 - Endpoint: `/api/v2/execute`
