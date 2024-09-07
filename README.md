@@ -7,14 +7,6 @@ Head over to the [meta repo](https://github.com/Order-332/orange) for help on ge
 # orange🟠 CRS
 orange🟠 Code Runner Server
 
-## Instances 
-> Note: The status is not live and may be inaccurate from time to time. It is not a technical uptime monitor, rather, it reflects our understanding of the CRS instances.
-
-| Server | Status |
-| ------ | ------ |
-| `crs-1.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Operational-limegreen) ![Static Badge](https://img.shields.io/badge/Sunsetting-navy)  |
-| `crs-2.orange.order332.com:443` | ![Static Badge](https://img.shields.io/badge/Offline-red)  |
-
 ## `execute` API v2 🆕
 - Endpoint: `/api/v2/execute`
 - Method: `POST`
